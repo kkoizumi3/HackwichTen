@@ -23,7 +23,12 @@ class ViewController: UIViewController {
         
         let restaurantOne = Resturant(title: "Kalapawai", type: "American", coordinate: CLLocationCoordinate2D(latitude: 21.346470, longitude: -158.080098))
         
+        //problem set
+        let restaurantTwo = Resttwo(title: "PHO & Co", type: "Vietnamese", coordinate: CLLocationCoordinate2D(latitude: 21.338000805058172, longitude: -158.08116486284956))
+        
         mapView.addAnnotation(restaurantOne)
+        
+        
     }
     
     func centerMapOnLocation(location:CLLocation)
