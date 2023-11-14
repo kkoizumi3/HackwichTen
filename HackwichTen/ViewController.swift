@@ -12,7 +12,7 @@ import CoreLocation
 class ViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
     
-    let initialLocation = CLLocation(latitude: 21.361888, longitude: -158.056022)
+    let initialLocation = CLLocation(latitude: 21.36188, longitude: -158.055725)
     
     let regionRadius: CLLocationDistance = 10000
     
@@ -22,21 +22,18 @@ class ViewController: UIViewController {
         centerMapOnLocation(location: initialLocation)
         
         let restaurantOne = Resturant(title: "Kalapawai", type: "American", coordinate: CLLocationCoordinate2D(latitude: 21.346470, longitude: -158.080098))
-        
-        //problem set
-        let restaurantTwo = Resttwo(title: "PHO & Co", type: "Vietnamese", coordinate: CLLocationCoordinate2D(latitude: 21.338000805058172, longitude: -158.08116486284956))
-        
         mapView.addAnnotation(restaurantOne)
         
+        //problem set
+        let restaurantTwo = Resturant(title: "Takumi Sushi and Bar", type: "Japanese", coordinate: CLLocationCoordinate2D(latitude: 21.33074161001403, longitude: -158.075428434462))
         
-    }
+        mapView.addAnnotation(restaurantTwo)
+       
+    } 
     
     func centerMapOnLocation(location:CLLocation)
            {
-               let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
-
-               latitudinalMeters: CLLocationDistance(regionRadius),
-               longitudinalMeters: CLLocationDistance(regionRadius))
+               let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
                mapView.setRegion(coordinateRegion, animated: true)
 
            }
